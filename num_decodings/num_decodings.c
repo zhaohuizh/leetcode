@@ -1,4 +1,6 @@
 #include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
 
 int decoding(char *s, int i, int *num){
     if(num[i]){
@@ -20,10 +22,16 @@ int decoding(char *s, int i, int *num){
 }
 
 int numDecodings(char *s) {
-    if(*s == '\0'){
+    if(*s == '\0' || *s == '0'){
         return 0;
     }
     size_t len = strlen(s);
-    int num[len];
+    int *num = (int *) malloc(sizeof(int) * len);
     return decoding(s, 0, num);
+}
+
+int main(){
+    char *s = "0";
+    int num = numDecodings(s);
+    printf("num: %d\n", num);
 }
