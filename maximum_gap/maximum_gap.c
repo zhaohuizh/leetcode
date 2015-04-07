@@ -1,7 +1,10 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+/*
+ This solution does not pass the test online. But I ran the failed test
+ input as below and get the correct result.
+*/
 int maximumGap(int num[], int n) {
   if(n == 1) return 0;
   int min = INT_MAX, max = 0;
