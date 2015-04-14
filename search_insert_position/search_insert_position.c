@@ -2,20 +2,20 @@
 
 int searchInsert(int A[], int n, int target) {
   int start = 0;
-  int end = n;
+  int end = n - 1;
   int mid;
-  while(start < end){
+  while(start <= end){
     mid = (start + end) >> 1;
     if(A[mid] == target){
       return mid;
     }
     if(A[mid] > target){
-      end = mid;
+      end = mid - 1;
     }else{
       start = mid + 1;
     }
   }
-  return end;
+  return start;
 }
 
 int main(){
