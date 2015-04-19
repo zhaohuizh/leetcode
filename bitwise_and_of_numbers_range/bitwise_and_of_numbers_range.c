@@ -12,6 +12,16 @@ int rangeBitwiseAnd(int m, int n) {
   return res << (i + 1);
 }
 
+int range_bitwise_and(int m, int n){
+  int i = 0;
+  while (m != n){
+    m >>= 1;
+    n >>= 1;
+    i++;
+  }
+  return m << i;
+}
+
 int main(){
   int m = 3;
   int n = 6;
