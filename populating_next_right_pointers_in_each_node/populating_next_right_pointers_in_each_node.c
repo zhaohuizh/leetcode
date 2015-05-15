@@ -25,9 +25,16 @@ void connect(struct TreeLinkNode *root) {
 
 //non-recursive
 void connect(struct TreeLinkNode *root){
+  if(!root) return;
   while(root->left){
     struct TreeLinkNode *curr = root;
-    root->left->next = root->right;
-
+    while(curr){
+      curr->left->next = curr->right;
+      if(curr->next){
+        curr->right->next = curr->next->left;
+      }
+      curr = curr->next;
+    }
+    root = root->left;
   }
 }
