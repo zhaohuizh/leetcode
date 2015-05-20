@@ -55,7 +55,6 @@ int minStackGetMin(MinStack *stack) {
 void minStackDestroy(MinStack *stack) {
   free(stack->array);
   free(stack->min_array);
-  free(stack);
 }
 
 int main(){
